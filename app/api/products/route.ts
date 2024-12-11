@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "../../../lib/prisma";
 import fs from 'fs';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
+
 
 // Handling GET request (same as before)
 // API to get medications with their associated medication names
@@ -10,7 +10,7 @@ export async function GET() {
   try {
     const medications = await prisma.medication.findMany({
       include: {
-        medicationName: true,  // Fetch the associated medication name
+        medicationname: true,  // Fetch the associated medication name
       },
     });
 
