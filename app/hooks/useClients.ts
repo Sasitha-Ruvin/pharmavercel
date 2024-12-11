@@ -21,7 +21,7 @@ const useClients = (searchQuery: string) => {
         tier: client.tier,
         contractType: client.contractType,
         paymentMethod: client.paymentMethod,
-        addresses: client.addresses.map((addr: any) => addr.address).join(', '), 
+        clientaddress: client.clientaddress.map((addr: any) => addr.address).join(', '), 
       }));
 
       setAllClients(formattedData);
