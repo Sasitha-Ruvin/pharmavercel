@@ -16,7 +16,7 @@ import useMedications from "@/app/hooks/useMedication";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 80 },
-  { field: "name", headerName: "Name", width: 80 },
+  { field: "medicationname", headerName: "Name", width: 80 },
   { field: "scientificName", headerName:"Scientific Name", width:80},
   { field: "batchcode", headerName: "Batch Code", width: 80 },
   { field: "expiration", headerName: "Expiration", width: 80 },
