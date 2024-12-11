@@ -13,7 +13,7 @@ const useMedications = (searchQuery: string) => {
       
       const formattedData = data.medications.map((medication: any) => ({
         id: medication.id,
-        name: medication.medicationName.name, 
+        medicationname: medication.medicationname.name, 
         scientificName:medication.scientificName,
         expiration: medication.expireDate, 
         batchcode:medication.batchCode,
