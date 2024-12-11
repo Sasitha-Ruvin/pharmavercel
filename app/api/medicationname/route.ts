@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 
 export async function GET() {
   try {
-    const medicationNames = await prisma.medicationName.findMany({
+    const medicationNames = await prisma.medicationname.findMany({
       select: {
         id: true,
         name: true,
@@ -19,7 +19,7 @@ export async function GET() {
 export async function POST(request:Request){
   try {
     const data = await request.json();
-    const newMedName = await prisma.medicationName.create({
+    const newMedName = await prisma.medicationname.create({
       data:{
         name:data.name,
       },
