@@ -6,7 +6,7 @@ export async function GET() {
     try {
         const clients = await prisma.client.findMany({
             where: { isDeleted: false },
-            include: { addresses: true },
+            include: { clientaddress: true },
         });
 
         return NextResponse.json(clients);
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         },
       });
   
-      const clientAddresses = await prisma.clientAddress.createMany({
+      const clientAddresses = await prisma.clientaddress.createMany({
         data: data.addresses.map((address: string) => ({
           clientId: newClient.id,
           address,
