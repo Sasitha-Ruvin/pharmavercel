@@ -32,8 +32,7 @@ const UpdateClientForm = () => {
     addresses: [],
   });
 
-  useEffect(() => {
-    const fetchClient = async () => {
+  const fetchClient = async () => {
       try {
         const response = await fetch(`/api/customers/${id}`);
         const client = await response.json();
@@ -60,8 +59,10 @@ const UpdateClientForm = () => {
         console.error('Error Fetching Client: ', error);
       }
     };
-    fetchClient();
-  }, [id]);
+    useEffect(() =>{
+      fetchClient();
+    },[]);
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
