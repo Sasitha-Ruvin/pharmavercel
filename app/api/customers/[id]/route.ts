@@ -69,7 +69,7 @@ export async function DELETE(request:Request, {params}:{params:{id:string}}) {
         const {id} = params;
         const clientId = parseInt(id,10);
 
-        if(!isNaN(clientId)){
+        if(isNaN(clientId)){
             return NextResponse.json({error:'Invalid Client ID'}, {status:400});
         }
 
