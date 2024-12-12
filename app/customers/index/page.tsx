@@ -65,7 +65,7 @@ const page = () => {
                   });
                   return;
                 }
-                window.location.href = `customers/update/${selectedClientId}`;
+                window.location.href = `/customers/update/${selectedClientId}`;
               }}
               variant='contained'
               color='primary'
