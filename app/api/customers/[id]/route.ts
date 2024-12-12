@@ -7,7 +7,8 @@ export async function GET(request:Request,{params}:{params:{id:string}}) {
         const {id} = params;
         const clientId = parseInt(id,10);
         const client = await prisma.client.findUnique({
-            where:{id:clientId}
+            where:{id:clientId},
+            include: { clientaddress: true },
         })
 
         if(isNaN(clientId)){

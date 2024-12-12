@@ -37,7 +37,7 @@ const UpdateClientForm = () => {
     try {
       const response = await fetch(`/api/customers/${id}`);
       const client = await response.json();
-
+  
       if (response.ok) {
         setFormData({
           name: client.name || "",
@@ -47,7 +47,7 @@ const UpdateClientForm = () => {
           contractType: client.contractType || "",
           paymentMethod: client.paymentMethod || "",
           tier: client.tier || "",
-          addresses: client.clientaddress?.map((addr: any) => addr.address) || [],
+          addresses: client.clientaddress?.map((addr: { address: string }) => addr.address) || [],
         });
       } else {
         Swal.fire({
@@ -67,6 +67,7 @@ const UpdateClientForm = () => {
       setIsLoading(false);
     }
   };
+  
 
   useEffect(() => {
     fetchClient();
