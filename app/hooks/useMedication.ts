@@ -49,7 +49,7 @@ const useMedications = (searchQuery: string) => {
     } else {
       setFilteredMedications(
         allMedications.filter(medication =>
-          medication.name.toLowerCase().includes(searchQuery.toLowerCase())
+          medication.medicationname.toLowerCase().includes(searchQuery.toLowerCase())
         )
       );
     }
